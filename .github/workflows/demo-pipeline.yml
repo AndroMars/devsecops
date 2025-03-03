@@ -31,6 +31,7 @@ jobs:
         with:
           config: p/python
           output: semgrep-results.sarif
+          sarif: semgrep-results.sarif
         env:
           SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
 
@@ -61,15 +62,15 @@ jobs:
 
       # Ergebnisse hochladen
       - name: Upload scan results
-        uses: github/codeql-action/upload-sarif@v2
-        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        if: always() && success() && hashFiles('semgrep-results.sarif') != ''
         with:
           sarif_file: semgrep-results.sarif
           category: semgrep
 
       - name: Upload Trivy scan results
-        uses: github/codeql-action/upload-sarif@v2
-        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        if: always() && success() && hashFiles('trivy-results.sarif') != ''
         with:
           sarif_file: trivy-results.sarif
           category: trivy 
