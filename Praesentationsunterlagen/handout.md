@@ -4,7 +4,11 @@
 
 ### 1. Grundlagen von DevSecOps
 
-- **Definition**: DevSecOps integriert Sicherheit nahtlos in den gesamten Softwareentwicklungsprozess durch Automatisierung, kollaborative Teamstrukturen und kontinuierliche Sicherheitspraktiken.
+- **Integration von Sicherheit** in den gesamten Entwicklungszyklus
+- **Erweiterung des DevOps-Ansatzes** um Security
+- **Sicherheit als gemeinsame Verantwortung**
+- **Frühzeitige Identifizierung** von Schwachstellen
+
 - **Traditioneller Ansatz vs. DevSecOps**:
   - Traditionell: Sicherheit als Zusatzprüfung am Ende ("Security as Gatekeeper")
   - DevSecOps: Sicherheit als integraler Bestandteil ("Security as Enabler")
@@ -14,33 +18,32 @@
 
 ### 2. Shift-Left und Shift-Right Security
 
-- **Shift-Left**: Verlagerung von Sicherheitsmaßnahmen in frühe Phasen des Entwicklungszyklus
+- **Shift-Left**: Sicherheit in frühen Phasen integrieren
   - **Präventiver Ansatz**: Reduziert Kosten und Zeit für Fehlerbehebung
+  - **Fokus**: Planung, Entwicklung, Build
   - **Techniken**:
-    - Threat Modeling: Systematische Bedrohungsanalyse (z.B. STRIDE-Methode)
-    - SAST: Statische Code-Analyse (SonarQube, Checkmarx, Semgrep)
-    - SCA: Analyse von Abhängigkeiten (OWASP Dependency-Check, Snyk)
-    - Pre-Commit Hooks: Automatisierte Prüfungen vor dem Commit
-    - IaC-Scanning: Infrastruktur-Code-Analyse (Terraform-Scanner, Checkov)
+    - Threat Modeling: Systematische Bedrohungsanalyse
+    - SAST: Statische Code-Analyse
+    - SCA: Analyse von Abhängigkeiten
+    - Pre-Commit Hooks: Automatisierte Prüfungen
+    - IaC-Scanning: Infrastruktur-Code-Analyse
   
-- **Shift-Right**: Sicherheitsmaßnahmen in Deployment- und Betriebsphase
-  - **Reaktiver Ansatz**: Erkennt Probleme in realen Umgebungen
+- **Shift-Right**: Sicherheit in späteren Phasen integrieren
+  - **Reaktiver und überwachender Ansatz**: Erkennt Probleme in realen Umgebungen
+  - **Fokus**: Deployment, Betrieb, Monitoring
   - **Techniken**:
-    - DAST: Dynamische Anwendungstests (OWASP ZAP, Burp Suite)
-    - RASP: Laufzeitschutz für Anwendungen (Contrast Security)
+    - DAST: Dynamische Anwendungstests
+    - RASP: Laufzeitschutz für Anwendungen
     - Anomalieerkennung: Erkennung ungewöhnlicher Muster
-    - Chaos Engineering: Gezielte Resilienz-Tests (Netflix Chaos Monkey)
-    - Security Monitoring: Kontinuierliche Überwachung (Splunk, ELK Stack)
+    - Chaos Engineering: Gezielte Resilienz-Tests
+    - Security Monitoring: Kontinuierliche Überwachung
 
 > **Wichtig**: Beide Ansätze ergänzen sich und bilden einen vollständigen Sicherheitskreislauf über den gesamten Lebenszyklus der Anwendung.
 
 ### 3. Security in der CI/CD-Pipeline
 
-- **Integration nach dem "Defense in Depth"-Prinzip**:
-  - Mehrere Sicherheitsschichten bieten besseren Schutz
-  - Kein einzelnes Tool kann alle Sicherheitsprobleme finden
-  - Kombination verschiedener Tools erhöht die Erkennungsrate
-
+- **Integration nach dem 'Defense in Depth'-Prinzip**
+- **Automatisierte Sicherheitstests** in jeder Phase
 - **Beispiel einer Pipeline-Konfiguration**:
 ```yaml
 stages:
@@ -65,17 +68,24 @@ security_scan:
 
 ### 4. Fallstudien
 
-- **Netflix**: 
+- **Netflix - DevSecOps in der Cloud**: 
   - Vorreiter bei Cloud-nativen DevSecOps-Praktiken
-  - Open-Source-Tools: Security Monkey, Repokid, Chaos Monkey
-  - Sicherheitsphilosophie: "Security is Everyone's Job", "Freedom and Responsibility"
+  - Open-Source-Sicherheitstools:
+    - Security Monkey: Überwacht AWS-Konfigurationen
+    - Repokid: Automatisiert IAM-Berechtigungen
+    - Chaos Monkey: Testet Infrastruktur-Resilienz
+  - Sicherheitsphilosophie:
+    - "Security is Everyone's Job"
+    - "Freedom and Responsibility"
+    - "Context over Control"
   - Ergebnisse:
     - 90% Reduzierung der Zeit für Sicherheitsbehebungen
     - 72% reduzierte Kosten für Sicherheitsvorfälle
     - 35% höhere Entwicklerproduktivität
 
-- **Capital One**:
-  - Verstärkte DevSecOps-Praktiken nach Datenschutzvorfall 2019 (SSRF-Angriff)
+- **Capital One - DevSecOps nach Sicherheitsvorfall**:
+  - Verstärkte DevSecOps-Praktiken nach Datenschutzvorfall 2019
+  - Ursache: Server Side Request Forgery (SSRF) in WAF-Konfiguration
   - 106 Millionen betroffene Kundendatensätze
   - Implementierte Maßnahmen:
     - Cloud Custodian Framework
@@ -90,7 +100,8 @@ security_scan:
 ### 5. Kulturelle Transformation
 
 - **Security Champions Modell**:
-  - Entwickler mit Sicherheitsexpertise (10-15% ihrer Zeit für Sicherheitsthemen)
+  - Entwickler mit Sicherheitsexpertise
+  - 10-15% ihrer Zeit für Sicherheitsthemen
   - Multiplikatoren im Team
   - Verbindung zum zentralen Sicherheitsteam
 
@@ -104,11 +115,12 @@ security_scan:
 
 ### 6. Herausforderungen und Lösungen
 
-- **Technische Herausforderungen**:
+- **Herausforderungen**:
   - Integration ohne Beeinträchtigung der Geschwindigkeit
     - Sicherheitstests können CI/CD-Pipelines um 30-200% verlangsamen
   - Komplexität bei Microservices-Architekturen
   - Umgang mit Legacy-Systemen
+  - Kulturelle Widerstände und Skill-Gaps
 
 - **Lösungsansätze**:
   - Schrittweise Einführung in Phasen
@@ -135,44 +147,36 @@ security_scan:
 
 ### 8. DevSecOps-Tools Übersicht
 
-| Kategorie | Bereich | Tools |
-|-----------|---------|-------|
-| **Shift-Left** | SAST | SonarQube, Checkmarx, Semgrep |
-| | SCA | OWASP Dependency-Check, Snyk, WhiteSource |
-| | Secret Detection | GitGuardian, TruffleHog |
-| | IaC-Scanning | Terraform-Scanner, CloudFormation-Linter, Checkov |
-| | Threat Modeling | STRIDE-Framework, Microsoft Threat Modeling Tool |
-| **Shift-Right** | DAST | OWASP ZAP, Burp Suite |
-| | RASP | Contrast Security, Signal Sciences |
-| | Container-Scanning | Trivy, Clair, Docker Scout |
-| | Security Monitoring | Splunk, ELK Stack, Datadog |
-| | Chaos Engineering | Netflix Chaos Monkey, Gremlin |
-| **CI/CD-Integration** | Pipeline-Tools | GitLab CI/CD, GitHub Actions, Jenkins |
-| | Automatisierung | Ansible, Puppet, Chef |
-| | Compliance-Prüfung | Open Policy Agent, HashiCorp Sentinel |
-| **Cloud Security** | CSPM | Cloud Custodian, AWS Config |
-| | IAM-Management | Repokid, AWS IAM Analyzer |
-| | Konfigurationsüberwachung | Security Monkey, CloudMapper |
+- **Shift-Left Tools**:
+  - SAST: SonarQube, Checkmarx, Semgrep
+  - SCA: OWASP Dependency-Check, Snyk, WhiteSource
+  - Secret Detection: GitGuardian, TruffleHog
+  - IaC-Scanning: Terraform-Scanner, CloudFormation-Linter, Checkov
+  - Threat Modeling: STRIDE-Framework, Microsoft Threat Modeling Tool
 
-### 9. Zukunftstrends
+- **Shift-Right Tools**:
+  - DAST: OWASP ZAP, Burp Suite
+  - RASP: Contrast Security, Signal Sciences
+  - Container-Scanning: Trivy, Clair, Docker Scout
+  - Security Monitoring: Splunk, ELK Stack, Datadog
+  - Chaos Engineering: Netflix Chaos Monkey, Gremlin
 
-- **KI-Integration**: Predictive Security Analytics, Automated Vulnerability Management
-- **Zero Trust Modell**: Neuausrichtung der Sicherheitsarchitektur
-- **Cloud Native Security**: Spezifische Lösungen für Container und Serverless
-- **Post-Quantum-Kryptographie**: Vorbereitung auf Quantencomputer-Bedrohungen
+- **CI/CD-Integration**:
+  - Pipeline-Tools: GitLab CI/CD, GitHub Actions, Jenkins
+  - Automatisierung: Ansible, Puppet, Chef
+  - Compliance-Prüfung: Open Policy Agent, HashiCorp Sentinel
+
+- **Cloud Security**:
+  - CSPM: Cloud Custodian, AWS Config
+  - IAM-Management: Repokid, AWS IAM Analyzer
+  - Konfigurationsüberwachung: Security Monkey, CloudMapper
 
 ---
 
 ## Diskussionsfragen
 
-1. Welche Sicherheitsstufe hat Ihre CI/CD-Pipeline?
-   - Manuell
-   - Teilautomatisiert
-   - Vollintegriert
-
-2. Welche Herausforderungen sehen Sie bei der Implementierung von DevSecOps in Ihrem Umfeld?
-
-3. Welche Sicherheitstools setzen Sie bereits ein?
+1. Welche Herausforderungen sehen Sie bei der Implementierung von DevSecOps in Ihrem Umfeld?
+2. Was ist Ihre wichtigste Erkenntnis aus dieser Präsentation?
 
 ---
 
@@ -180,7 +184,7 @@ security_scan:
 
 - OWASP DevSecOps Guideline: [https://owasp.org/www-project-devsecops-guideline/](https://owasp.org/www-project-devsecops-guideline/)
 - DevSecOps Community: [https://www.devsecops.org/](https://www.devsecops.org/)
-- GitHub Security Lab: [https://securitylab.github.com/](https://securitylab.github.com/)
+- GitHub-Repository mit Beispiel-Pipelines
 - Atlassian DevSecOps-Tools: [https://www.atlassian.com/de/devops/devops-tools/devsecops-tools](https://www.atlassian.com/de/devops/devops-tools/devsecops-tools)
 - IBM Security Report: [https://www.ibm.com/security/data-breach](https://www.ibm.com/security/data-breach)
 
