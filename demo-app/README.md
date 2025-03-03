@@ -1,8 +1,6 @@
-# DevSecOps Demo
+# DevSecOps Demo App
 
-Dieses Repository enthält eine einfache Flask-Anwendung, die für Demonstrationszwecke im Rahmen einer DevSecOps-Präsentation erstellt wurde. Sie enthält **absichtlich Sicherheitslücken**, um die Funktionsweise von Sicherheitstools in einer DevSecOps-Pipeline zu demonstrieren.
-
-Repository: [https://github.com/AndroMars/devsecops](https://github.com/AndroMars/devsecops)
+Diese einfache Flask-Anwendung wurde für Demonstrationszwecke im Rahmen einer DevSecOps-Präsentation erstellt. Sie enthält **absichtlich Sicherheitslücken**, um die Funktionsweise von Sicherheitstools in einer DevSecOps-Pipeline zu demonstrieren.
 
 ## Warnung
 
@@ -24,8 +22,8 @@ Die Anwendung enthält absichtlich folgende Sicherheitslücken:
 
 ```bash
 # Repository klonen
-git clone https://github.com/AndroMars/devsecops.git
-cd devsecops/demo-app
+git clone https://github.com/yourusername/devsecops-demo.git
+cd devsecops-demo
 
 # Virtuelle Umgebung erstellen und aktivieren
 python -m venv venv
@@ -53,8 +51,8 @@ Die Pipeline-Konfiguration befindet sich in der Datei `.github/workflows/demo-pi
 
 ## Behebung der Sicherheitslücken
 
-Im Repository sind sowohl die unsichere Version (`app.py`) als auch die sichere Version (`app_secure.py`) der Anwendung enthalten. Die sichere Version zeigt, wie die Sicherheitslücken behoben werden können.
+Im Rahmen der Präsentation werden die Sicherheitslücken identifiziert und behoben. Die korrigierten Versionen der Dateien finden Sie im Branch `secure`.
 
 ## Lizenz
 
-Dieses Projekt ist unter der MIT-Lizenz lizenziert.
+Dieses Projekt ist unter der MIT-Lizenz lizenziert. Siehe die LICENSE-Datei für Details. 
