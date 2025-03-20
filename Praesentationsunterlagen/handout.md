@@ -92,10 +92,11 @@ security_scan:
     - Cloud Security Posture Management
     - Infrastructure as Code mit Sicherheitsprüfungen
     - Identity & Access Management-Überarbeitung
-  - Ergebnisse:
-    - 70% Reduzierung der Sicherheitslücken
-    - 98,5% Reduzierung kritischer Fehlkonfigurationen
-    - MTTR von 7 Tagen auf 8 Stunden reduziert
+  - Folgen und Maßnahmen
+    - 190 Millionen USD VergleichszahlungUmfassende
+    - Überarbeitung der Cloud-Sicherheit
+    - Verpflichtende Cybersicherheitsverbesserungen
+    - DevSecOps-Transformation als Reaktion
 
 ### 5. Kulturelle Transformation
 
