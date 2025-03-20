@@ -13,8 +13,8 @@
   - Traditionell: Sicherheit als Zusatzprüfung am Ende ("Security as Gatekeeper")
   - DevSecOps: Sicherheit als integraler Bestandteil ("Security as Enabler")
 - **Wirtschaftliche Bedeutung**:
-  - 60x höhere Kosten für Sicherheitsprobleme, die erst in der Produktionsphase entdeckt werden
-  - Quelle: IBM Security, "Cost of a Data Breach Report", 2021
+  - 4x höhere Kosten für Sicherheitsprobleme, die erst in der Produktionsphase entdeckt werden
+  - Quelle: IBM Security, "Cost of a Data Breach Report", 2024
 
 ### 2. Shift-Left und Shift-Right Security
 
